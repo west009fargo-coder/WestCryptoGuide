@@ -1,1 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>WestCryptoGuide | Learn Crypto With Confidence</title>
+
+<meta name="description" content="Learn cryptocurrency, Bitcoin, blockchain, wallets, trading, DeFi and crypto safety with WestCryptoGuide.">
+
+<style>
+:root{
+  --bg:#f5f7fb;
+  --white:#fff;
+  --dark:#0b1220;
+  --dark2:#111a2e;
+  --text:#172033;
+  --muted:#667085;
+  --border:#e5e7eb;
+  --gold:#f5b942;
+  --green:#159957;
+  --red:#d64545;
+  --radius:18px;
+  --shadow:0 12px 35px rgba(15,23,42,.08);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(11,18,32,.97);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+  max-width:1180px;
+  margin:auto;
+  padding:15px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  color:white;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  font-size:20px;
+}
+
+.logo{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  background:var(--gold);
+  color:var(--dark);
+  font-weight:900;
+}
+
+nav{
+  display:flex;
+  gap:23px;
+}
+
+nav a{
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+}
+
+nav a:hover{
+  color:white;
+}
+
+/* HERO */
+
+.hero{
+  background:
+  radial-gradient(circle at 15% 20%,rgba(245,185,66,.16),transparent 30%),
+  radial-gradient(circle at 85% 70%,rgba(71,109,255,.14),transparent 30%),
+  var(--dark);
+  color:white;
+  padding:90px 22px;
+}
+
+.hero-content{
+  max-width:950px;
+  margin:auto;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  border:1px solid rgba(245,185,66,.35);
+  background:rgba(245,185,66,.09);
+  color:#ffd978;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(40px,7vw,68px);
+  line-height:1.05;
+  letter-spacing:-2px;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero p{
+  max-width:680px;
+  margin:22px auto;
+  color:#aeb9cc;
+  font-size:18px;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:800;
+  margin:5px;
+}
+
+.btn-primary{
+  background:var(--gold);
+  color:var(--dark);
+}
+
+.btn-secondary{
+  border:1px solid #34415a;
+  color:white;
+}
+
+/* GENERAL */
+
+section{
+  max-width:1180px;
+  margin:auto;
+  padding:75px 22px;
+}
+
+.heading{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 40px;
+}
+
+.eyebrow{
+  color:#bd8614;
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+
+.heading h2{
+  font-size:clamp(30px,5vw,44px);
+  line-height:1.15;
+  margin:8px 0 13px;
+}
+
+.heading p{
+  color:var(--muted);
+}
+
+/* LESSON CARDS */
+
+.lessons{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.lesson{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:25px;
+  box-shadow:0 5px 18px rgba(15,23,42,.04);
+  transition:.2s;
+}
+
+.lesson:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+
+.lesson-number{
+  color:#bd8614;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.lesson h3{
+  margin:8px 0;
+}
+
+.lesson p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.lesson button{
+  margin-top:18px;
+}
+
+/* BUTTON */
+
+button{
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.lesson-btn{
+  background:var(--dark);
+  color:white;
+  padding:11px 15px;
+  border-radius:9px;
+  font-weight:700;
+}
+
+/* LEARNING AREA */
+
+.learning-area{
+  display:none;
+  background:white;
+  border-top:1px solid var(--border);
+}
+
+.learning-card{
+  max-width:850px;
+  margin:auto;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:35px;
+  box-shadow:var(--shadow);
+}
+
+.lesson-label{
+  color:#bd8614;
+  font-weight:900;
+  font-size:13px;
+  text-transform:uppercase;
+}
+
+.learning-card h2{
+  font-size:34px;
+  margin:8px 0 20px;
+}
+
+.learning-card h3{
+  margin:28px 0 8px;
+}
+
+.learning-card p{
+  color:#4b5563;
+  margin-bottom:14px;
+}
+
+.learning-card ul{
+  padding-left:22px;
+  margin-bottom:15px;
+}
+
+.learning-card li{
+  margin:7px 0;
+}
+
+.tip{
+  padding:18px;
+  border-left:4px solid var(--gold);
+  background:#fff9e9;
+  border-radius:8px;
+  margin:20px 0;
+}
+
+.quiz{
+  margin-top:35px;
+  padding:25px;
+  background:#f7f8fb;
+  border-radius:14px;
+}
+
+.quiz h3{
+  margin-top:0;
+}
+
+.option{
+  display:block;
+  width:100%;
+  text-align:left;
+  background:white;
+  border:1px solid var(--border);
+  padding:14px;
+  margin:9px 0;
+  border-radius:9px;
+  font-weight:600;
+}
+
+.option:hover{
+  border-color:var(--dark);
+}
+
+.feedback{
+  margin-top:15px;
+  font-weight:800;
+}
+
+.next-btn{
+  display:none;
+  background:var(--green);
+  color:white;
+  padding:12px 17px;
+  border-radius:9px;
+  margin-top:18px;
+  font-weight:800;
+}
+
+/* PROGRESS */
+
+.progress-box{
+  max-width:850px;
+  margin:0 auto 25px;
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+.progress{
+  height:8px;
+  background:#e5e7eb;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:var(--gold);
+  transition:.3s;
+}
+
+/* CALCULATOR */
+
+.tools{
+  background:var(--dark);
+  color:white;
+  max-width:none;
+}
+
+.tool-inner{
+  max-width:700px;
+  margin:auto;
+}
+
+.tools .heading h2{
+  color:white;
+}
+
+.tools .heading p{
+  color:#aeb9cc;
+}
+
+.calculator{
+  background:white;
+  color:var(--text);
+  padding:30px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.field{
+  margin-bottom:17px;
+}
+
+.field label{
+  display:block;
+  margin-bottom:7px;
+  font-weight:700;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:1px solid #d7dce5;
+  border-radius:9px;
+  font-size:16px;
+}
+
+.calculate{
+  width:100%;
+  padding:14px;
+  background:var(--dark);
+  color:white;
+  border-radius:9px;
+  font-weight:800;
+  font-size:16px;
+}
+
+.result{
+  margin-top:17px;
+  padding:15px;
+  text-align:center;
+  background:#f5f7fb;
+  border-radius:9px;
+  font-weight:800;
+}
+
+/* SAFETY */
+
+.safety-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.safety-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.safety-card h3{
+  margin-bottom:15px;
+}
+
+.safety-card li{
+  list-style:none;
+  margin:10px 0;
+  color:var(--muted);
+}
+
+/* FAQ */
+
+.faq{
+  max-width:800px;
+  margin:auto;
+}
+
+details{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:17px 20px;
+  margin-bottom:12px;
+}
+
+summary{
+  font-weight:800;
+  cursor:pointer;
+}
+
+details p{
+  color:var(--muted);
+  margin-top:10px;
+}
+
+/* FOOTER */
+
+footer{
+  background:var(--dark);
+  color:#aeb9cc;
+  padding:50px 22px 25px;
+}
+
+.footer{
+  max-width:1180px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+
+footer h3{
+  color:white;
+  margin-bottom:10px;
+}
+
+footer a{
+  display:block;
+  color:#aeb9cc;
+  text-decoration:none;
+  margin:7px 0;
+  font-size:14px;
+}
+
+.copyright{
+  max-width:1180px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #273249;
+  text-align:center;
+  font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  nav{
+    display:none;
+  }
+
+  .lessons{
+    grid-template-columns:1fr;
+  }
+
+  .safety-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:60px 18px;
+  }
+
+  .learning-card{
+    padding:24px;
+  }
+
+  .learning-card h2{
+    font-size:29px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<a href="#" class="brand">
+<div class="logo">W</div>
+WestCryptoGuide
+</a>
+
+<nav>
+<a href="#learn">Learn</a>
+<a href="#tools">Tools</a>
+<a href="#safety">Safety</a>
+<a href="#faq">FAQ</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+🌍 Crypto education for beginners
+</div>
+
+<h1>
+Understand Crypto.<br>
+<span>Invest Smarter.</span>
+</h1>
+
+<p>
+Learn cryptocurrency from the ground up.
+Understand Bitcoin, blockchain, wallets, investing,
+DeFi and crypto security.
+</p>
+
+<a class="btn btn-primary" href="#learn">
+Start Learning →
+</a>
+
+<a class="btn btn-secondary" href="#safety">
+Learn Safety
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSONS -->
+
+<section id="learn">
+
+<div class="heading">
+
+<div class="eyebrow">Crypto Academy</div>
+
+<h2>Learn crypto step by step.</h2>
+
+<p>
+Complete the lessons in order and test yourself
+as you learn.
+</p>
+
+</div>
+
+
+<div class="lessons">
+
+<div class="lesson">
+<div class="lesson-number">Lesson 01</div>
+<h3>What Is Cryptocurrency?</h3>
+<p>Understand digital assets and why crypto exists.</p>
+<button class="lesson-btn" onclick="openLesson(1)">Start lesson →</button>
+</div>
+
+
+<div class="lesson">
+<div class="lesson-number">Lesson 02</div>
+<h3>Bitcoin</h3>
+<p>Learn what Bitcoin is and how its network works.</p>
+<button class="lesson-btn" onclick="openLesson(2)">Start lesson →</button>
+</div>
+
+
+<div class="lesson">
+<div class="lesson-number">Lesson 03</div>
+<h3>Blockchain</h3>
+<p>Understand blocks, transactions and nodes.</p>
+<button class="lesson-btn" onclick="openLesson(3)">Start lesson →</button>
+</div>
+
+
+<div class="lesson">
+<div class="lesson-number">Lesson 04</div>
+<h3>Wallets & Keys</h3>
+<p>Understand addresses, private keys and seed phrases.</p>
+<button class="lesson-btn" onclick="openLesson(4)">Start lesson →</button>
+</div>
+
+
+<div class="lesson">
+<div class="lesson-number">Lesson 05</div>
+<h3>Coins vs Tokens</h3>
+<p>Learn the difference between coins and tokens.</p>
+<button class="lesson-btn" onclick="openLesson(5)">Start lesson →</button>
+</div>
+
+
+<div class="lesson">
+<div class="lesson-number">Lesson 06</div>
+<h3>Smart Contracts</h3>
+<p>Understand programmable blockchain agreements.</p>
+<button class="lesson-btn" onclick="openLesson(6)">Start lesson →</button>
+</div>
+
+
+<div class="lesson">
+<div class="lesson-number">Lesson 07</div>
+<h3>CEX vs DEX</h3>
+<p>Learn how centralized and decentralized exchanges differ.</p>
+<button class="lesson-btn" onclick="openLesson(7)">Start lesson →</button>
+</div>
+
+
+<div class="lesson">
+<div class="lesson-number">Lesson 08</div>
+<h3>Market Cap & Tokenomics</h3>
+<p>Understand supply, market cap and token distribution.</p>
+<button class="lesson-btn" onclick="openLesson(8)">Start lesson →</button>
+</div>
+
+
+<div class="lesson">
+<div class="lesson-number">Lesson 09</div>
+<h3>Liquidity & Slippage</h3>
+<p>Understand why a displayed price isn't always your execution price.</p>
+<button class="lesson-btn" onclick="openLesson(9)">Start lesson →</button>
+</div>
+
+
+<div class="lesson">
+<div class="lesson-number">Lesson 10</div>
+<h3>Crypto Scams</h3>
+<p>Learn how to recognize common crypto scams.</p>
+<button class="lesson-btn" onclick="openLesson(10)">Start lesson →</button>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LEARNING AREA -->
+
+<section id="learningArea" class="learning-area">
+
+<div class="progress-box">
+
+<div class="progress-top">
+<span id="progressText">Lesson 1 of 10</span>
+<span id="scoreText">Score: 0</span>
+</div>
+
+<div class="progress">
+<div id="progressFill" class="progress-fill"></div>
+</div>
+
+</div>
+
+
+<div class="learning-card">
+
+<div id="lessonContent"></div>
+
+</div>
+
+</section>
+
+
+<!-- TOOLS -->
+
+<section id="tools" class="tools">
+
+<div class="tool-inner">
+
+<div class="heading">
+
+<div class="eyebrow">Free Tool</div>
+
+<h2>Market Cap Calculator</h2>
+
+<p>
+Market Cap = Token Price × Circulating Supply
+</p>
+
+</div>
+
+
+<div class="calculator">
+
+<div class="field">
+<label>Token Price</label>
+<input id="price" type="number" placeholder="Example: 100">
+</div>
+
+<div class="field">
+<label>Circulating Supply</label>
+<input id="supply" type="number" placeholder="Example: 100000000">
+</div>
+
+<button class="calculate" onclick="calculateMarketCap()">
+Calculate Market Cap
+</button>
+
+<div id="result" class="result">
+Enter your values above.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SAFETY -->
+
+<section id="safety">
+
+<div class="heading">
+
+<div class="eyebrow">Security</div>
+
+<h2>Protect yourself before you invest.</h2>
+
+<p>
+Knowing what NOT to do is one of the most important
+crypto skills.
+</p>
+
+</div>
+
+
+<div class="safety-grid">
+
+<div class="safety-card">
+
+<h3>🚨 Never Do This</h3>
+
+<ul>
+<li>❌ Share your seed phrase.</li>
+<li>❌ Share your private key.</li>
+<li>❌ Trust guaranteed profit promises.</li>
+<li>❌ Send crypto to strangers promising double returns.</li>
+<li>❌ Connect your wallet to suspicious websites.</li>
+</ul>
+
+</div>
+
+
+<div class="safety-card">
+
+<h3>✅ Always Do This</h3>
+
+<ul>
+<li>✓ Verify addresses before sending.</li>
+<li>✓ Confirm the blockchain network.</li>
+<li>✓ Research projects carefully.</li>
+<li>✓ Start small while learning.</li>
+<li>✓ Keep recovery information private.</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<div class="heading">
+
+<div class="eyebrow">FAQ</div>
+
+<h2>Common beginner questions.</h2>
+
+</div>
+
+
+<div class="faq">
+
+<details>
+<summary>Can I lose money in cryptocurrency?</summary>
+<p>
+Yes. Crypto prices can be extremely volatile and you can lose some or all of the money you invest.
+</p>
+</details>
+
+
+<details>
+<summary>Do I need to buy one whole Bitcoin?</summary>
+<p>
+No. Bitcoin is divisible into very small units called satoshis.
+</p>
+</details>
+
+
+<details>
+<summary>What is a seed phrase?</summary>
+<p>
+A seed phrase is a backup used by compatible wallets to regenerate the keys that control your crypto accounts.
+</p>
+</details>
+
+
+<details>
+<summary>Can someone ask for my seed phrase?</summary>
+<p>
+A legitimate support person or service should never need your seed phrase to receive or send crypto.
+</p>
+</details>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer">
+
+<div>
+<h3>🌍 WestCryptoGuide</h3>
+<p>
+Making cryptocurrency easier to understand for beginners.
+</p>
+</div>
+
+<div>
+<h3>Learn</h3>
+<a href="#learn">Crypto Academy</a>
+<a href="#tools">Tools</a>
+<a href="#safety">Safety</a>
+</div>
+
+<div>
+<h3>Important</h3>
+<p>
+Educational information only. This website is not financial advice.
+</p>
+</div>
+
+</div>
+
+
+<div class="copyright">
+© 2026 WestCryptoGuide. Learn first. Invest carefully.
+</div>
+
+</footer>
+
+
+<script>
+
+/* LESSON DATA */
+
+const lessons = {
+
+1: {
+title:"What Is Cryptocurrency?",
+body:`
+<p>
+Cryptocurrency is a type of digital asset that uses cryptography
+and blockchain technology to record and transfer value.
+</p>
+
+<h3>Why does crypto exist?</h3>
+
+<p>
+Traditional financial systems often rely on banks and other
+central institutions. Cryptocurrencies can allow people to
+transfer value using decentralized networks.
+</p>
+
+<div class="tip">
+<strong>Remember:</strong> Cryptocurrency isn't simply "internet money."
+Different cryptocurrencies have different designs, purposes and risks.
+</div>
+`,
+question:"Which technology is fundamental to Bitcoin?",
+options:["Blockchain","Email","Bluetooth","GPS"],
+answer:0
+},
+
+2: {
+title:"Bitcoin",
+body:`
+<p>
+Bitcoin is the first widely adopted decentralized cryptocurrency.
+It was introduced in 2009 and operates without a central bank
+controlling the network.
+</p>
+
+<h3>Bitcoin's supply</h3>
+
+<p>
+Bitcoin's protocol limits the eventual supply to approximately
+21 million BTC.
+</p>
+
+<h3>How is the network secured?</h3>
+
+<p>
+Bitcoin uses <strong>Proof of Work</strong>. Miners perform
+computational work and compete to add valid blocks to the blockchain.
+</p>
+
+<div class="tip">
+<strong>Key idea:</strong> Bitcoin is not stored inside your phone.
+The blockchain records the balances, while your keys provide control.
+</div>
+`,
+question:"What consensus mechanism does Bitcoin use?",
+options:["Proof of Work","Proof of Stake","Proof of Authority","Proof of Identity"],
+answer:0
+},
+
+3: {
+title:"Blockchain",
+body:`
+<p>
+A blockchain is a distributed digital ledger. Transactions are
+grouped into blocks and linked together using cryptographic methods.
+</p>
+
+<h3>What are nodes?</h3>
+
+<p>
+Nodes are computers participating in the blockchain network.
+Depending on the network and node type, they can verify transactions,
+store blockchain data and relay information.
+</p>
+
+<div class="tip">
+<strong>Think of it like this:</strong> A blockchain is a shared record
+maintained by a network of computers rather than one central database.
+</div>
+`,
+question:"What is a blockchain?",
+options:[
+"A distributed digital ledger",
+"A type of password",
+"A cryptocurrency wallet",
+"A mobile phone"
+],
+answer:0
+},
+
+4: {
+title:"Wallets & Keys",
+body:`
+<p>
+A crypto wallet manages the cryptographic keys that allow you to
+control assets recorded on a blockchain.
+</p>
+
+<h3>Wallet address</h3>
+
+<p>
+Your address can generally be shared so someone can send crypto to you.
+</p>
+
+<h3>Private key</h3>
+
+<p>
+Your private key must remain secret. It is used to authorize transactions.
+</p>
+
+<h3>Seed phrase</h3>
+
+<p>
+A seed phrase can allow a compatible wallet to recreate the keys
+associated with your wallet.
+</p>
+
+<div class="tip">
+<strong>Never share your seed phrase or private key.</strong>
+</div>
+`,
+question:"Which should you keep secret?",
+options:["Wallet address","Private key","Public information","Coin name"],
+answer:1
+},
+
+5: {
+title:"Coins vs Tokens",
+body:`
+<p>
+A <strong>coin</strong> is generally the native asset of its own
+blockchain.
+</p>
+
+<p>
+Examples include BTC on Bitcoin and ETH on Ethereum.
+</p>
+
+<p>
+A <strong>token</strong> is generally an asset created on top of
+an existing blockchain using that network's infrastructure.
+</p>
+
+<div class="tip">
+<strong>Simple rule:</strong> Coins belong to their own networks;
+tokens generally operate on an existing network.
+</div>
+`,
+question:"What is ETH?",
+options:[
+"A native coin of Ethereum",
+"A Bitcoin token",
+"A wallet",
+"A stablecoin only"
+],
+answer:0
+},
+
+6: {
+title:"Smart Contracts",
+body:`
+<p>
+A smart contract is a program deployed on a blockchain that can
+automatically execute actions according to its programmed rules.
+</p>
+
+<h3>Example</h3>
+
+<p>
+A decentralized exchange can use smart contracts to facilitate
+certain token swaps without a traditional central exchange operator
+executing every trade manually.
+</p>
+
+<div class="tip">
+<strong>Important:</strong> Smart contracts don't automatically mean
+a project is safe. Bugs and vulnerabilities can exist in code.
+</div>
+`,
+question:"What is a smart contract?",
+options:[
+"A blockchain program",
+"A physical contract",
+"A wallet password",
+"A mining machine"
+],
+answer:0
+},
+
+7: {
+title:"CEX vs DEX",
+body:`
+<p>
+A <strong>CEX</strong> is a centralized exchange operated by a company.
+Users typically interact with accounts managed by that platform.
+</p>
+
+<p>
+A <strong>DEX</strong> is a decentralized exchange that uses
+blockchain-based smart contracts to facilitate certain trades.
+</p>
+
+<div class="tip">
+<strong>Remember:</strong> Both have risks. With a CEX you have
+platform/custody risks; with a DEX you can face smart-contract,
+wallet and transaction risks.
+</div>
+`,
+question:"What does DEX stand for?",
+options:[
+"Digital Exchange",
+"Decentralized Exchange",
+"Direct Exchange",
+"Distributed Economy"
+],
+answer:1
+},
+
+8: {
+title:"Market Cap & Tokenomics",
+body:`
+<p>
+Market capitalization is commonly calculated as:
+</p>
+
+<div class="tip">
+<strong>Market Cap = Price × Circulating Supply</strong>
+</div>
+
+<p>
+Tokenomics refers to the economic design of a token, including
+supply, distribution, utility and unlock schedules.
+</p>
+
+<h3>Why supply matters</h3>
+
+<p>
+A token priced at ₦1 isn't automatically cheaper than a token
+priced at ₦100. You need to consider how many tokens exist.
+</p>
+`,
+question:"What is the common market-cap formula?",
+options:[
+"Price + Supply",
+"Price × Circulating Supply",
+"Price ÷ Supply",
+"Supply − Price"
+],
+answer:1
+},
+
+9: {
+title:"Liquidity & Slippage",
+body:`
+<p>
+Liquidity describes how easily an asset can be bought or sold
+without causing a large change in price.
+</p>
+
+<p>
+Slippage is the difference between the expected price of a trade
+and the actual execution price.
+</p>
+
+<div class="tip">
+<strong>Important:</strong> A token can show a huge price increase
+while still having insufficient liquidity for you to sell a large position
+at that displayed price.
+</div>
+`,
+question:"What is slippage?",
+options:[
+"A wallet password",
+"The difference between expected and actual execution price",
+"A blockchain",
+"A type of token"
+],
+answer:1
+},
+
+10: {
+title:"Crypto Scams",
+body:`
+<p>
+Crypto scams often rely on urgency, fear, greed or impersonation.
+</p>
+
+<h3>Common warning signs</h3>
+
+<ul>
+<li>Guaranteed profits</li>
+<li>Pressure to act immediately</li>
+<li>Requests for your seed phrase</li>
+<li>Fake giveaways</li>
+<li>Promises to double your crypto</li>
+<li>Suspicious links asking you to connect your wallet</li>
+</ul>
+
+<div class="tip">
+<strong>Golden rule:</strong> If someone needs your seed phrase
+to "verify", "unlock" or "recover" your wallet, stop.
+</div>
+`,
+question:"Which should you NEVER give to another person?",
+options:[
+"Your wallet address",
+"Your public username",
+"Your seed phrase",
+"A cryptocurrency name"
+],
+answer:2
+}
+
+};
+
+
+/* LEARNING SYSTEM */
+
+let currentLesson = 1;
+let score = 0;
+
+function openLesson(number){
+
+  currentLesson = number;
+
+  const area = document.getElementById("learningArea");
+
+  area.style.display = "block";
+
+  renderLesson();
+
+  area.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+function renderLesson(){
+
+  const lesson = lessons[currentLesson];
+
+  document.getElementById("progressText").innerText =
+    "Lesson " + currentLesson + " of 10";
+
+  document.getElementById("scoreText").innerText =
+    "Score: " + score;
+
+  document.getElementById("progressFill").style.width =
+    (currentLesson / 10 * 100) + "%";
+
+
+  let html = `
+
+    <div class="lesson-label">
+      Lesson ${currentLesson}
+    </div>
+
+    <h2>${lesson.title}</h2>
+
+    ${lesson.body}
+
+    <div class="quiz">
+
+      <h3>🧠 Test Yourself</h3>
+
+      <p><strong>${lesson.question}</strong></p>
+
+  `;
+
+
+  lesson.options.forEach((option,index)=>{
+
+    html += `
+      <button
+        class="option"
+        onclick="answerQuestion(${index})"
+      >
+        ${String.fromCharCode(65 + index)}. ${option}
+      </button>
+    `;
+
+  });
+
+
+  html += `
+
+      <div id="feedback" class="feedback"></div>
+
+      <button
+        id="nextLesson"
+        class="next-btn"
+        onclick="nextLesson()"
+      >
+        ${currentLesson === 10 ? "Finish Course 🎉" : "Next Lesson →"}
+      </button>
+
+    </div>
+
+  `;
+
+
+  document.getElementById("lessonContent").innerHTML = html;
+
+}
+
+
+function answerQuestion(choice){
+
+  const lesson = lessons[currentLesson];
+
+  const feedback = document.getElementById("feedback");
+
+  const options = document.querySelectorAll(".option");
+
+  options.forEach(button=>{
+    button.disabled = true;
+  });
+
+
+  if(choice === lesson.answer){
+
+    score++;
+
+    feedback.innerText =
+      "✅ Correct! Great job.";
+
+    feedback.style.color =
+      "var(--green)";
+
+  }else{
+
+    feedback.innerText =
+      "❌ Not quite. The correct answer is " +
+      String.fromCharCode(65 + lesson.answer) +
+      ".";
+
+    feedback.style.color =
+      "var(--red)";
+
+  }
+
+
+  document.getElementById("scoreText").innerText =
+    "Score: " + score;
+
+  document.getElementById("nextLesson").style.display =
+    "inline-block";
+
+}
+
+
+function nextLesson(){
+
+  if(currentLesson < 10){
+
+    currentLesson++;
+
+    renderLesson();
+
+    window.scrollTo({
+      top:document.getElementById("learningArea").offsetTop - 70,
+      behavior:"smooth"
+    });
+
+  }else{
+
+    document.getElementById("lessonContent").innerHTML = `
+
+      <div class="lesson-label">
+        Course Complete
+      </div>
+
+      <h2>🎉 Congratulations!</h2>
+
+      <p>
+        You've completed all 10 beginner lessons.
+      </p>
+
+      <div class="tip">
+
+        <strong>Your final score: ${score}/10</strong>
+
+        <br><br>
+
+        Keep learning and always research before
+        putting money into a cryptocurrency project.
+
+      </div>
+
+      <button
+        class="lesson-btn"
+        onclick="window.location.href='#learn'"
+      >
+        Review Lessons
+      </button>
+
+    `;
+
+  }
+
+}
+
+
+/* CALCULATOR */
+
+function calculateMarketCap(){
+
+  const price =
+    Number(document.getElementById("price").value);
+
+  const supply =
+    Number(document.getElementById("supply").value);
+
+  const result =
+    document.getElementById("result");
+
+
+  if(
+    !Number.isFinite(price) ||
+    !Number.isFinite(supply) ||
+    price <= 0 ||
+    supply <= 0
+  ){
+
+    result.innerText =
+      "Please enter valid positive numbers.";
+
+    return;
+
+  }
+
+
+  const marketCap =
+    price * supply;
+
+
+  result.innerText =
+    "Estimated Market Cap: " +
+    marketCap.toLocaleString();
+
+}
+
+</script>
+
+</body>
+</html>
